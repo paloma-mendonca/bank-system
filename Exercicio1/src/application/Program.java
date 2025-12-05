@@ -9,8 +9,9 @@ public class Program {
 	/**
 	 * The main method initializes and starts the menu interface.
 	 */
-	public static void main() {
+	public static void main(String[] args) {
 		Menu menu = new Menu();
 		menu.start();
 	}
+
 }
