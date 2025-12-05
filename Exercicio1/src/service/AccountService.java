@@ -6,17 +6,38 @@ import domain.BankAccount;
 import domain.Transaction;
 import repository.AccountRepository;
 
+/**
+ * The AccountService class provides various services related to bank accounts.
+ * It includes operations such as checking balance, depositing, withdrawing,
+ * transferring funds, and changing account limits.
+ */
 public class AccountService {
 
+	/** The repository for managing bank accounts. */
 	private AccountRepository repository;
+
+	/** The service for managing transactions. */
 	private TransactionService transactionService;
+
+	/** The current bank account being operated on. */
 	public BankAccount account;
 
+	/**
+	 * Constructs an AccountService with the specified repository and transaction service.
+	 * 
+	 * @param repository The repository for managing bank accounts.
+	 * @param transactionService The service for managing transactions.
+	 */
 	public AccountService(AccountRepository repository, TransactionService transactionService) {
 		this.repository = repository;
 		this.transactionService = transactionService;
 	}
 	
+	/**
+	 * Checks the balance of a bank account.
+	 * 
+	 * @param sc The scanner for user input.
+	 */
 	public void checkBalance(Scanner sc) {
 		do {
 			System.out.print("Enter the account number: ");
@@ -30,6 +51,11 @@ public class AccountService {
 		} while (account == null);
 	}
 
+	/**
+	 * Deposits an amount into a bank account.
+	 * 
+	 * @param sc The scanner for user input.
+	 */
 	public void deposit(Scanner sc) {
 		if (transactionService.checkTime() == true) {
 			do {
@@ -59,6 +85,11 @@ public class AccountService {
 		}
 	}
 
+	/**
+	 * Withdraws an amount from a bank account.
+	 * 
+	 * @param sc The scanner for user input.
+	 */
 	public void withdraw(Scanner sc) {
 		do {
 			System.out.print("Enter the account number: ");
@@ -85,6 +116,11 @@ public class AccountService {
 		} while (account == null);
 	}
 
+	/**
+	 * Transfers funds between two bank accounts.
+	 * 
+	 * @param sc The scanner for user input.
+	 */
 	public void transfer(Scanner sc) {
 		BankAccount destinyAccount;
 		do {
@@ -115,12 +151,23 @@ public class AccountService {
 		} while (account == null && destinyAccount == null);
 	}
 
+	/**
+	 * Validates the format of a monetary amount.
+	 * 
+	 * @param amount The amount to validate.
+	 * @return True if the amount is valid, false otherwise.
+	 */
 	public boolean checkAmount(String amount) {
 		if (!amount.matches("^\\d+(\\.\\d{1,2})?$"))
 			return false;
 		return true;
 	}
 	
+	/**
+	 * Changes the limit of a bank account.
+	 * 
+	 * @param sc The scanner for user input.
+	 */
 	public void changeLimit(Scanner sc) {
 		do {
 			System.out.print("Enter the account number: ");

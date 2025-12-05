@@ -2,8 +2,6 @@ package application;
 
 import java.util.Scanner;
 
-
-
 import domain.BankAccount;
 import repository.AccountRepository;
 import repository.UserRepository;
@@ -11,18 +9,35 @@ import service.AccountService;
 import service.ExportService;
 import service.TransactionService;
 
-/**Menu Class
- * Process commands
+/**
+ * The Menu class is responsible for processing user commands and providing
+ * an interface to interact with the banking system.
  */
 
+/**
+ * Provides a menu-driven interface for the banking system.
+ * This class handles user input and delegates operations to the appropriate services.
+ */
 public class Menu {
 
+	/** Repository for managing bank accounts. */
 	private static final AccountRepository accountRepository = new AccountRepository();
+
+	/** Repository for managing users. */
 	private static final UserRepository userRepository = new UserRepository();
+
+	/** Service for managing transactions. */
 	private static final TransactionService transactionService = new TransactionService();
+
+	/** Service for managing account operations. */
 	private static final AccountService accountService = new AccountService(accountRepository, transactionService);
+
+	/** Service for exporting transaction history. */
 	private static final ExportService exportService = new ExportService();
 
+	/**
+	 * Starts the menu and processes user commands.
+	 */
 	public void start() {
 		Scanner sc = new Scanner(System.in);
 		int option;
@@ -78,6 +93,9 @@ public class Menu {
 
 	}
 
+	/**
+	 * Displays the menu options to the user.
+	 */
 	private void showMenu() {
 		System.out.println("""
 				---------- MENU ----------

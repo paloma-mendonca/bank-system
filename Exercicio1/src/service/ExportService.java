@@ -9,8 +9,21 @@ import java.util.List;
 
 import domain.Transaction;
 
+/**
+ * The ExportService class provides functionality to export transaction data to a CSV file.
+ */
+
+/**
+ * Service class for exporting transaction history.
+ * This class generates a CSV file containing the details of all transactions.
+ */
 public class ExportService {
 
+	/**
+	 * Exports the transaction history to a CSV file.
+	 * 
+	 * @param transacaoService The TransactionService containing the transaction history.
+	 */
 	public void exportCSV (TransactionService transacaoService) {
 		String line = "Date,Transaction type,Amoun,Origin account,Destiny account";
 		List<String> lines = new ArrayList<>();
