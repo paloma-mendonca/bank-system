@@ -18,3 +18,11 @@ This documentatios helps you run the program.
 1. Clone the repository on your machine
 2. Open on your IDE 
 3. Run from Program.java
+
+# Class Diagram
+
+![Class Diagram](BankSystem/assets/ClassDiagram.png)
+
+# Class Sequence
+
+![Class Sequence](BankSystem/assets/ClassSequence.png)
