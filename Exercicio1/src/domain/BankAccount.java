@@ -264,9 +264,9 @@ public abstract class BankAccount {
 		do {
 			System.out.print("Username: ");
 			name = sc.nextLine();
-			if(!name.matches("^[\p{L} ]+( [\p{L}]+)*$"))
+			if(!name.matches("^[\\p{L} ]+( [\\p{L}]+)*$"))
 				System.out.println("Invalid name.");
-		} while(!name.matches("^[\p{L} ]+( [\p{L}]+)*$"));
+		} while(!name.matches("^[\\p{L} ]+( [\\p{L}]+)*$"));
 		return name;
 	}
 
