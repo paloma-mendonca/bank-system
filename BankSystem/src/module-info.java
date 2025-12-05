@@ -4,5 +4,5 @@
 /**
  * 
  */
-module Exercicio1 {
+module BankSystem {
 }
