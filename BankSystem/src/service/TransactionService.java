@@ -50,7 +50,7 @@ public class TransactionService {
 					"; Transaction type: " + transaction.getType() + 
 					String.format("; Amount: $%.2f", transaction.getAmount()) + 
 					"; Origin account: " + transaction.getOriginAccount() + 
-					"; Destiny account: " + transaction.getDestinyAccount());
+					"; Destination account: " + transaction.getDestinyAccount());
 		}
 	}
 	
@@ -67,3 +67,4 @@ public class TransactionService {
 		return false;
 	}
 }
+
