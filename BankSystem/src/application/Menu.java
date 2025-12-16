@@ -56,6 +56,7 @@ public class Menu {
 				break;
 			case 3:
 				accountService.checkBalance(sc);
+				break;
 			case 4:
 				if (transactionService.checkTime() == true)
 					accountService.deposit(sc);
@@ -90,7 +91,6 @@ public class Menu {
 				e.printStackTrace();
 			}
 		} while (option != 0);
-
 	}
 
 	/**
@@ -111,3 +111,4 @@ public class Menu {
 				""");
 	}
 }
+
